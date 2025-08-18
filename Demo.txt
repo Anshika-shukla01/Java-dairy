@@ -1,0 +1,185 @@
+Conditional Operator with Boiler Plate Code 
+-----------------------------------------------------------------------------
+class Demo{
+      public static void main(String[] args){
+   System.out.println("hello world");
+}
+}
+
+class Demo1{
+      public static void main(String[] args){
+   System.out.println("hello world");
+}
+}
+
+class Demo2{
+      public static void main(String[] args){
+   System.out.println("hello world");
+}
+}
+
+class Demo3{
+      public static void main(String[] args){
+   System.out.println("hello world");
+}
+}
+
+class Demo4{
+      public static void main(String[] args){
+   System.out.println("hello world");
+}
+}
+
+-----------------------------------------------------------------------------------------
+public class clw {
+    public static void main(String[] args) {
+        int a = 350;
+        int b = (a - 100);
+        int c = (a - 200);
+        int d = (a - 300);
+        int e = b*7 + c*8;
+        int f = b*7 + c*8 + d*10;
+
+        if (a <= 100) {
+            System.out.print("Don't need to pay anything");
+        } else if (a <= 200) {
+            System.out.print("Pay " + b*7);
+        } else if (a <= 300) {
+            System.out.print("Pay " + e);
+        } else {
+            System.out.print("Pay " + f);
+        }
+    }
+}
+--------------------------------------------------------------------------
+public class Marks {
+    public static void main(String[] args) {
+        double maths = 40;
+        double science = 45;
+        double sst = 35;
+        double english = 40;
+
+        double n = 200;
+        double m = maths + science + sst + english;
+        double percentage = (m/n) * 100;
+           
+        System.out.print("percentage " + percentage + "%");
+        
+    }
+}
+-------------------------------------------------------------------------
+class Demo{
+      public static void main(String[] args){
+   int a = 10;
+    if(a = 10){
+      System.out.println("I am Vivek");
+    } else {
+      System.out.println("I am Rahul");
+    }
+}
+}
+
+Demo.java:4: error: incompatible types: int cannot be converted to boolean
+    if(a = 10){
+         ^
+1 error
+---------------------------------------------------------------
+class Demo{
+      public static void main(String[] args){
+   int a = 10;
+   boolean Flag = true;
+    if(Flag = false){
+      System.out.println("I am Vivek");
+    } else {
+      System.out.println("I am Rahul");
+    }
+}
+}
+
+-OP - I am Rahul
+------------------------------------------------------------
+class Demo{
+      public static void main(String[] args){
+   int a = 10;
+   if(true) int b = 20;  
+}
+}
+Demo.java:4: error: variable declaration not allowed here
+   if(true) int b = 20;
+                ^
+1 error
+---------------------------------------------------
+class Demo{
+   public static void main(String[] args){
+   int b = 10;
+   if(true) b = 20;  
+   System.out.println(b);
+}
+}
+OP --- 20 
+----------------------------------------------------------
+class Demo{
+   public static void main(String[] args){
+   if(false);
+   if(true) 
+   System.out.println("hi");
+   else
+   System.out.println("bye");
+}
+}
+--- OP - hi
+
+----------------------------------------------------------// Switchs
+class Demo{
+   public static void main(String[] args){
+   int b = 10;
+   int y = ++b;
+   System.out.println(++y);
+   System.out.println(y++ + ++b + ++y);
+
+}
+}
+OP -- 12
+      38
+------------------------------------------------------------
+class Demo{
+   public static void main(String[] args){
+   int b = 10;
+   int y = ++b;
+   System.out.println(++y);
+   System.out.println(y++ + ++b + ++y + 10++);
+
+}
+}
+error----
+System.out.println(y++ + ++b + ++y + 10++);
+                                        ^
+  required: variable
+  found:    value
+1 error
+------------------------------------------------------------
+class Demo{
+   public static void main(String[] args){
+   final int y = 10;
+   System.out.println(++y);
+}
+}
+
+Demo.java:4: error: cannot assign a value to final variable y
+   System.out.println(++y);
+                        ^
+1 error
+
+----------------------------------------------------------------
+class Demo{
+   public static void main(String[] args){
+   byte b = 10;
+   b = b+!;
+   System.out.println(b+1);
+}
+}
+
+Demo.java:4: error: illegal start of expression
+   b = b+!;
+          ^
+1 error
