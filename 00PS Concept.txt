@@ -1,0 +1,124 @@
+00PS Concept
+--------------------------------------------------------------------
+class A{
+   public static void main(String[] args){
+      m1();
+   }
+   void m1(){
+      System.out.println("M1 Executed");
+   }
+}
+
+A.java:3: error: non-static method m1() cannot be referenced from a static context
+      m1();
+      ^
+1 error
+---
+
+class A{
+   public static void main(String[] args){
+      int i = m1();
+      System.out.println("Main Executed" + i);
+      m1();
+   }
+    static int m1(){
+      System.out.println("M1 Executed");
+      return 10;
+   }
+}
+
+O/P - M1 Executed
+Main Executed1
+M1 Executed
+---
+class A{
+   public static void main(String[] args){
+      int i = m1();
+      System.out.println("Main Executed" + i);
+      m1();
+      int j = m1()*3;
+      System.out.println("Main Executed 2" + i);
+   }
+    static int m1(){
+      System.out.println("M1 Executed");
+      return 10;
+   }
+}
+
+O/P - M1 Executed
+Main Executed10
+M1 Executed
+M1 Executed
+Main Executed 210
+------------------------------------------------------------------------------------
+00Ps - Parameters
+---------------------------------------------------------------
+
+class A{
+   public static void main(String[] args){
+      int a = 10;
+      m1(a);
+      System.out.println("Main Executed" + a);
+   }
+    static void m1(int a){
+        a*= 10;
+      System.out.println("M1 Executed" + a);
+   }
+}
+
+O/P - M1 Executed100
+      Main Executed10
+-----------------------------------------------------------------
+class A{
+   public static void main(String[] args){
+      int a = 10;
+      m1(a++);
+      System.out.println("M1 is Executed " + a);
+   }
+   static void m1(int a){
+      System.out.println("M1 is Executed" + a);
+   }
+}
+
+O/P - M1 is Executed10
+      M1 is Executed 11
+---------------------------------------------------------------
+class A{
+   public static void main(String[] args){
+      int a = 10;
+     int c = m1(a++);
+      System.out.println("M1 is Executed " + c);
+   }
+   static int m1(int b){
+      System.out.println("M1 is Executed" + b++);
+      return ++b;
+   }
+}
+O/P - M1 is Executed10
+      M1 is Executed 12
+----------------------------------------------------------------
+class A{
+   public static void main(String[] args){
+      int i = 0;
+      int j = 0;
+      j = m1(++i) + m1(j++);
+      System.out.println("i=" +i + " " + "j=" + j);
+   }
+   static int m1(int i){
+      return ++i;
+   }
+}
+
+O/P - i=1 j=3
+-----------------------------------------------------
+class A{
+   public static void main(String[] args){
+      m1();
+      System.out.println(m1());
+   }
+   static int m1(){
+      int a = 0;
+      return ++a;
+   }
+}
+O/P - 1
