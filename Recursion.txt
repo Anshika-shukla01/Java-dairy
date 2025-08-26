@@ -1,0 +1,313 @@
+Method Overloading
+------------------------------------------------------------
+class A{
+   public static void main(String[] args){
+      int a = 10;
+      int b = 20;
+      byte c = 10;
+      byte d = 11;
+      System.out.println(sum(a,b));
+      System.out.println(sum(c,d));
+   }
+   static int sum(int a , int b){
+      return a+b;
+   }
+   static int sum(byte a , byte b){
+      return a+b;
+   }
+}
+O/P - 30
+      21
+---
+Recursion
+-------------------------------------------------
+
+class A{
+   public static void main(String[] args){
+     m1(1);
+   }
+   static void m1(int a){
+      System.out.println(a);
+      if(a == 3) return;
+      m1(++a);
+      System.out.println(a);
+   }
+}
+
+O/P - 1
+      2
+      3
+      3
+      3
+      2
+---
+class A{
+   public static void main(String[] args){
+     m1(1);
+   }
+   static void m1(int a){
+      System.out.print(a);
+      if(a == 3) return;
+      m1(a+1);
+      m1(a+1);
+      m1(++a);
+      System.out.print(a);
+   }
+}
+
+O/P - 12333323333233332
+
+------------------------------------------------------
+class A{
+   public static void main(String[] args){
+     m1(0,2);
+   }
+   static void m1(int start, int end){
+      if(start >= end)return;
+      for(int i = start; i <= end; i++){
+         System.out.print(i);
+         m1(start + 1 , end);
+      }
+   }
+}
+0/P - 012112212
+-------------------------------------------------
+class A{
+   int i = 0;
+   void m1(){
+      System.out.print(i + " ");
+   }
+
+   public static void main(String[] args){
+      A a1 = new A();
+      A a2 = new A();
+      a1.i = 10;
+      a2.i = 20;
+      a1.m1();
+      a2.m1();
+   }
+}
+O/P - 10 20 
+-----------------------------------------------
+class A{
+   static int i = 0;      // because it will load the memory statically 
+   void m1(){
+      System.out.print(i + " ");
+   }
+
+   public static void main(String[] args){
+      A a1 = new A();
+      A a2 = new A();
+      a1.i = 10;
+      a2.i = 20;
+      a1.m1();
+      a2.m1();
+   }
+}
+O/P - 20 20 
+-----------------------------------------------------------
+class A{
+   static int i = 0;
+   int j = 1;
+   void increment(){
+      i++;
+      ++i;
+      j++;
+      ++j;
+   }
+   void display(){
+      System.out.println("i=" +i+ "j=" +j);
+   }
+   public static void main(String[] args){
+      A a1 = new A();
+      A a2 = new A();
+      A a3 = new A();
+      A a4 = new A();
+
+      a1.increment();
+      a2.increment();
+      a3.increment();
+      a4.increment();
+
+      a1.display();
+      a2.display();
+      a3.increment();
+      a3.display();
+      a4.display();
+   }
+}
+
+O/P -- i=8j=3
+       i=8j=3
+       i=10j=5
+       i=10j=3
+------------------------------------------
+class A{
+   int i = 0;
+   void m1(){
+      A a = new A();
+      a.i = 20;
+      System.out.println(a.i);
+      System.out.println(i);
+   }
+    public static void main(String[] args){
+      A a1 = new A();
+      a1.i = 5;
+      a1.m1();
+   }
+}
+O/P - 20
+      5
+-------------------------------------------------
+class A{
+   int temp = 10;
+   static int acModel =  1001;
+   int thisA;
+   A(){
+      thisA = acModel ++;
+   }
+   void incTemp(){
+      temp++;
+   }
+   void decTemp(){
+      temp--;
+   }
+   void on(){
+      System.out.print("Ac is Turning on");
+      temp=24;
+   }
+   void off(){
+      System.out.println("Ac is Turning off" + thisA);
+      temp = 16;
+   }
+}
+class Test{
+   public static void main(String[] args){
+      A a1 = new A();
+      A a2 = new A();
+      a1.on();
+      System.out.println(a1.temp);
+      a1.incTemp();
+      System.out.println(a1.temp);
+      a1.decTemp();
+      System.out.println(a1.temp);
+      a1.off();
+      System.out.println(a1.temp);
+      a2.on();
+      System.out.println(a2.temp);
+      a2.incTemp();
+      System.out.println(a2.temp);
+      a2.decTemp();
+      System.out.println(a2.temp);
+      a2.off();
+      System.out.println(a2.temp);
+   }
+}
+
+O/P - Ac is Turning on24
+      25
+      24
+      Ac is Turning off1001
+      16
+      Ac is Turning on24
+      25
+      24
+      Ac is Turning off1002
+      16
+----------------------------------------------------
+class Circle{
+    int radi;
+}
+class Test{
+    public static void main(String[] args){
+        Circle c1 = new Circle();
+        c1.radi = 10;
+        Circle c2 = c1;
+        System.out.print(c2.radi);
+        c1.radi = 20;
+        System.out.print(c2.radi);
+    }
+}
+	
+o/p - 1020
+------------------------------------------------------
+class Circle{
+    int radi;
+}
+class Test{
+    public static void main(String[] args){
+        Circle c1 =  new Circle();
+        c1.radi = 10;
+        Circle c2 = c1;
+        c1 = new Circle();
+        System.out.print(c2.radi + " ");
+        c1.radi = 20;
+        System.out.print(c2.radi + " ");
+        System.out.println(c2.radi);
+    }
+}
+O/P - 10 10 10
+--------------------------------------------------------
+class Circle{
+    int radi;
+    void m1(){
+        int radi = 10;
+        System.out.println(radi);
+        System.out.println(this.radi + "===");
+    }
+}
+class Test{
+    public static void main(String[] args){
+        Circle c1 = new Circle();
+        c1.radi = 50;
+        c1.m1();
+    }
+}
+O/P - 10
+      50===
+----------------------------------------------------
+class B{
+    int i;
+    B(){
+         System.out.println("First Call");
+    }
+    B(int a, int b){
+            System.out.println("Third call" + i);
+        }
+        B(int i){
+            this();
+            System.out.println("Second call");
+            this.i = i;
+            System.out.println("Forth call" + this.i);
+        }
+    class Test{
+        public static void main(String[] args){
+            B b = new B(10);
+            System.out.println(b.i);
+        }
+    }
+}
+0/P -  First Call
+       Second call
+       Forth call10
+       10
+----------------------------------------------------------------
+class C{
+    int i;
+    int j;
+    C(int x){
+        i = x;
+    }
+    C(int x , int y){
+        this(x);
+        j = y;
+    }
+}
+class Test{
+    public static void main(String[] args){
+        C c = new C(20,30);
+        System.out.println(c.i + " " + c.j);
+    }
+}
+O/P = 20 30
+----------------------------------------------------------------
