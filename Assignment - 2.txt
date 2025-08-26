@@ -1,0 +1,96 @@
+Assignment - 1
+
+file name - Main.java
+
+import java.util.Scanner;
+class Car{
+      String make ;
+      String model ;
+      Short year ;
+      int price ;
+ 
+     public Car(String make , String model , Short year , int price ){
+           this.make = make;
+           this.model = model;
+           this.year = year;
+           this.price = price;
+     }
+
+     public void displayDetail(){
+        System.out.println("make" + make);
+        System.out.println("model" + model);
+        System.out.println("year" + year);
+        System.out.println("price" + price);
+
+     }
+}
+
+public class Main{
+   public static void main(String[] args){
+       Scanner sc = new Scanner(System.in);
+
+       System.out.println("Enter make : ");
+       String make = sc.nextLine();
+
+       System.out.println("Enter model : ");
+       String model = sc.nextLine();
+
+       System.out.println("Enter year : ");
+       Short year = sc.nextShort();
+
+       System.out.println("Enter price : ");
+       int price = sc.nextInt();
+
+       Car userCar = new Car(make, model, year, price);
+
+       System.out.println("Car Details");
+       userCar.displayDetail();
+
+       sc.close();
+
+  }
+}
+
+
+Assignment - 2
+
+file name - Cal.java
+
+class Calc{
+         int a ;
+         int b ;
+         int c ;
+         double d ;
+         double e ;
+ 
+     static int add1(int a , int b){
+        return a + b;
+     }
+ 
+     static int add2(int a , int b, int c){
+        return a + b + c;
+     }
+
+     public double add3(double d , double e){
+        return d + e;
+     }     
+}
+
+
+public class Cal{
+       public static void main(String[] args) {
+
+        Calc cal = new Calc();
+
+        int sum1 = Calc.add1(5, 3);
+        System.out.println("sum of two interger : " + sum1); 
+
+        int sum2 = Calc.add2(3, 6, 9);
+        System.out.println("sum of three integer : " + sum2); 
+
+        double sum3 = cal.add3(2.6 , 4.7);
+        System.out.println("sum of two double : " + sum3); 
+
+   }
+
+}

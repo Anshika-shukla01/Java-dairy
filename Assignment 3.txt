@@ -1,0 +1,83 @@
+Assignment 1
+
+// Simple Interest in Java 
+import java.util.Scanner;
+
+public class SimpleInt{
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("enter the principal : ");
+        double principal = input.nextDouble();
+
+        System.out.println("Enter the time : ");
+        double time = input.nextDouble();
+
+        double rate = 0;
+
+        if( principal >= 10000) {
+           rate = 10;
+           System.out.println("Applied rate is :" + rate + "%");
+        }  else if( principal >= 5000 && principal <= 10000){
+           rate = 8;
+           System.out.println("Applied rate is :" + rate + "%") ;
+        } else if (principal <= 5000){
+           rate = 5;
+           System.out.println("Applied rate is :" + rate + "%") ;
+        }
+
+        double interest = (principal * time * rate) / 100;
+
+        System.out.println("Principal : " + principal);
+        System.out.println("time duration : " + time);
+        System.out.println("Simple Interest : " + interest);
+
+        input.close();
+    }
+}
+
+Assignment 2 
+
+import java.util.Scanner;
+
+public class StudentM {
+       public static void main(String [] args){
+          Scanner input = new Scanner(System.in);
+ 
+          System.out.println("Enter Maths no : " );
+          int Maths = input.nextInt();
+
+          System.out.println("Enter Science no : " );
+          int Science = input.nextInt();
+
+          System.out.println("Enter English no : " );
+          int English = input.nextInt();
+
+          System.out.println("Enter SST no : " );
+          int SST = input.nextInt();
+
+          System.out.println("Enter Hindi no : " );
+          int Hindi = input.nextInt();
+
+         int total =  (Maths + Science + English + SST + Hindi) ;
+          double average = ( ((total ) / 500.0 ) * 100);
+          System.out.println("Total Marks : " + average + "%");
+
+
+          if(average >= 90){
+            System.out.println("Topper");
+          } else if (average  >= 80){
+            System.out.println("Grade A" );
+          } else if (average  >= 60){
+            System.out.println("Grade B" );
+          } else if (average  >= 40){
+            System.out.println("Grade C" );
+          } else {
+            System.out.println("Grade F" );
+          }
+
+          input.close();
+  
+
+  } 
+}

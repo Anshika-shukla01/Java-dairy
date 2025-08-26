@@ -1,0 +1,43 @@
+Assignment -1
+
+public class Student{
+        private String studentName;
+        private String collegeName;
+        private int studentID;
+  
+        public void display() {
+            System.out.println("Successful");
+      }
+       
+        public static void main(String[] args){
+            Student s = new Student();
+            s.display();                    
+   }      
+}
+
+
+Assignment - 2
+
+public class Employee{
+
+//  error: incompatible types: possible lossy conversion from double to int
+           // e.id = 35.5;
+    // so we can change the type of variable implictly and use wide casting(change the smaller datatype to larger datatype)
+        // int id;
+         protected double id;
+         protected int age;
+         protected String name;
+         protected Boolean isPermanent;
+
+       public void display() {
+           System.out.println("Successfully started");
+}
+
+         public static void main(String[] args){
+            Employee e = new Employee();
+            e.id = 35.5;
+            System.out.println(e.id);
+            e.display();
+
+  }
+}
